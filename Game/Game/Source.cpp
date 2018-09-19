@@ -59,27 +59,8 @@ int randomGame2() {
 	return 0;
 }
 int main() {
-	int pickGame = 4;
-	do {
-		cout << "\nWelcome to my fabulous Game\nGame 1 or Game 2 or Game 3 or press 4 to leave but why would you. " << endl;
-		cin >> pickGame;
-
-		if (pickGame == 1) {
-			doorGame();
-		}
-		else if (pickGame == 2) {
-
-			randomGame();
-
-		}
-		else if (pickGame == 3) {
-			randomGame2();
-		}
-		else if (pickGame == 4) {
-			cout << "How could you.\n";
-		}
-
-	} while (pickGame != 4);
+	int pickGame;
+	
 	system("pause");
 	return 0;
 }
