@@ -23,7 +23,7 @@ using namespace std::this_thread;
 			while (computer != numChoice)
 			{
 				srand(time(NULL));
-				computer = rand() % 10 + 1;
+				computer = rand() % 100 + 1;
 				count++;
 				if (computer == numChoice)
 				{
@@ -32,7 +32,7 @@ using namespace std::this_thread;
 
 				else
 				{
-					sleep_for(milliseconds(700));
+					sleep_for(milliseconds(750));
 					cout << computer << endl;
 
 				}
