@@ -3,38 +3,46 @@
 #include <time.h>
 #include <stdio.h>
 #include<stdlib.h>
+#include <chrono>
+#include<thread>
 using namespace std;
+using namespace std::chrono;
+using namespace std::this_thread;
 
 	int main() {
 		int again;
 		int numChoice;
-		int secret;
+		int computer = 0;
 		int count = 0;
-
-		srand(time(NULL));
-		secret = rand() % 10 + 1;
+		
+		
 		do {
-			cout << "The computer will guess your number";
+			cout << "The computer will guess your number\n";
 			cout << "Enter a number : ";
 			cin >> numChoice;
-
-			if (secret == numChoice) 
+			while (computer != numChoice)
 			{
-				cout << "It guessed right";
+				srand(time(NULL));
+				computer = rand() % 10 + 1;
+				count++;
+				if (computer == numChoice)
+				{
+					cout << "It guessed right";
+				}
+
+				else
+				{
+					sleep_for(milliseconds(700));
+					cout << computer << endl;
+
+				}
 			}
-			else 
-			{
-				secret = 0;
-				secret = rand() % 10 + 1;
-		
-			}
-
-			count++;
+			
 
 
 
 
-			cout <<"It took " << count << " Play again? 1y for Yes 2 for No.";
+			cout <<" It took " << count << " Play again? 1-Yes 2-No.";
 			cin >> again;
 			count = 0;
 		} while (again != 2);
