@@ -8,14 +8,14 @@ using namespace std;
 
 
 int main() {
-	
+	int random = 0;
 
 	srand(time(NULL));
 	for (int i = 0; i <= 10; i++)
 	{
-		int random = 0;
-		i = rand() % 10 + 1;
-		cout << i << endl;
+		
+		random = rand() % 10 + 1;
+		cout << random << endl;
 	}
 
 	
